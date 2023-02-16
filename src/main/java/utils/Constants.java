@@ -7,6 +7,6 @@ public interface Constants {
     String DB_PASS_CONNECTION = "jupiter";
     String GET_USER_PASS = "select * from usuari where usuari = ? and password = ?";
     String GET_USUARI_BY_ID = "select * from usuari where id = ?";
-    String GET_ALL_POSTS = "select * from post p inner join usuari u on p.id_usuari = u.id order by p.id desc";
+    String GET_ALL_POSTS = "select * from post p inner join usuari u on p.id_usuari = u.id order by p.id desc limit 100";
     String SET_POST = "insert into post (id_usuari, title, message, image, likes, dat) values (?,?,?,?,0,now())";
 }
