@@ -25,7 +25,7 @@ public class Service {
     public boolean checkUserPass(String user, String password, HttpServletRequest req) {
         try {
             Usuari usu = this.dao.getUsuariPass(user, password);
-            req.setAttribute("id", usu.getId() + "");
+            if (usu != null) req.setAttribute("id", usu.getId() + "");
             return usu != null;
         } catch (SQLException e) {
             req.setAttribute("error", e.getMessage());

@@ -95,7 +95,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                    <a href="<%=p.getUsuari().getLinkedin()%>" target="_blank"> <i class="fas fa-solid fa-address-card"></i></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                   <a href="<%=p.getUsuari().getEmail()%>" target="_blank"> <i class="fas fa-regular fa-envelope"></i></a>
+                                   <a href="mailto:<%=p.getUsuari().getEmail()%>" target="_blank"> <i class="fas fa-regular fa-envelope"></i></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     <div class="mb-3 right">
                                         <%=p.getLikes()%>&nbsp;&nbsp;<i class="fas fa-regular fa-heart" style="color: deeppink;cursor: pointer"></i>
