@@ -1,5 +1,7 @@
-model\Usuari.class
 service\Service.class
 utils\Constants.class
-servlets\HomeServlet.class
 dao\Dao.class
+model\Usuari.class
+servlets\CommentServlet.class
+servlets\HomeServlet.class
+model\Post.class

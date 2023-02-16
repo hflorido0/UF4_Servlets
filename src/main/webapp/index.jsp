@@ -109,7 +109,7 @@
                             <%=error%>
                         </div>
                     <%}%>
-                    <form action="home" class="signin-form" method="GET">
+                    <form action="home" class="signin-form" method="POST">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Username" name="usu" required="">
                         </div>

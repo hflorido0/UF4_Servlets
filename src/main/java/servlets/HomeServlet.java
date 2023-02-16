@@ -19,18 +19,19 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String user = req.getParameter("usu");
         String password = req.getParameter("pass");
         if (this.service.checkUserPass(user, password, req)) {
+            req.setAttribute("posts", this.service.getPosts());
             getServletContext().getRequestDispatcher("/jsp/home.jsp").forward(req, resp);
         } else {
             req.setAttribute("error", "Usuario o contraseña incorrectos");
             getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
         }
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
     }
 }
