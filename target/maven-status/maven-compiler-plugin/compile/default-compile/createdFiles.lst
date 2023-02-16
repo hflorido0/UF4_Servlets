@@ -1,0 +1,5 @@
+model\Usuari.class
+service\Service.class
+utils\Constants.class
+servlets\HomeServlet.class
+dao\Dao.class
