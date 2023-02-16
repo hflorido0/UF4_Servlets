@@ -44,6 +44,8 @@
         .right {
             display: block;
             margin-left: auto;
+            margin-right: 10px;
+            margin-top: 10px;
         }
         .floating {
             position: absolute;
@@ -73,6 +75,11 @@
 
                     <% for (Post p : posts) {%>
                         <div class="card mb-5" style="border-radius: 15px;">
+                            <%if (id.equals(p.getUsuari().getId()+"")) {%>
+                                <div class="mb-3 right">
+                                    <a href="<%=p.getUsuari().getLinkedin()%>" target="_blank"> <i class="fas fa-regular fa-trash-can" style="color: red;cursor: pointer"></i></a>
+                                </div>
+                            <%}%>
                             <div class="card-body p-4">
                                 <h3 class="mb-3"><%=p.getTitle()%></h3>
                                 <img class="cover center" src="data:image/png;base64,<%=p.getFilePart()%>"  height="400">
@@ -81,20 +88,18 @@
                                 <hr class="my-4">
                                 <div class="d-flex justify-content-start align-items-center">
                                     <i class="fas fa-bell"></i> &nbsp;&nbsp;Created by&nbsp;&nbsp;
-                                    <strong><%=p.getUsuari().getUsuari()%></strong></p>
+                                    <strong><%=p.getUsuari().getUsuari()%></strong>&nbsp;&nbsp;
+                                    <%=p.getData()%>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <div class="mb-3">
-                                       <a href="<%=p.getUsuari().getGitlab()%>" target="_blank"> <i class="fas fa-solid fa-code-branch"></i></a>
-                                    </div>
+                                   <a href="<%=p.getUsuari().getGitlab()%>" target="_blank"> <i class="fas fa-solid fa-code-branch"></i></a>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <div class="mb-3">
-                                       <a href="<%=p.getUsuari().getLinkedin()%>" target="_blank"> <i class="fas fa-solid fa-address-card"></i></a>
+                                   <a href="<%=p.getUsuari().getLinkedin()%>" target="_blank"> <i class="fas fa-solid fa-address-card"></i></a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                   <a href="mailto:<%=p.getUsuari().getEmail()%>" target="_blank"> <i class="fas fa-regular fa-envelope"></i></a>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div class="mb-3 right">
+                                        <%=p.getLikes()%>&nbsp;&nbsp;<i class="fas fa-regular fa-heart" style="color: deeppink;cursor: pointer"></i>
                                     </div>
-                                    <%if (id.equals(p.getUsuari().getId()+"")) {%>
-                                        <div class="mb-3 right">
-                                           <a href="<%=p.getUsuari().getLinkedin()%>" target="_blank"> <i class="fas fa-regular fa-trash-can" style="color: red;cursor: pointer"></i></a>
-                                        </div>
-                                    <%}%>
                                 </div>
                             </div>
                         </div>

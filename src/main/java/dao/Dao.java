@@ -58,6 +58,7 @@ public class Dao {
                         rs.getBytes(6),
                         rs.getInt(7),
                         rs.getString(8),
+                        rs.getString(4),
                         usu));
             }
         }
